@@ -2,7 +2,7 @@
 
 **Proof should travel.**
 
-Rilatu is a **private-source** research prototype for freelancers who need a traceable work history. It connects original agreements, invoices and payments, explains what the records can support, and makes the gaps explicit. The demonstration uses synthetic data only.
+Rilatu is a **private-source** research prototype for freelancers who need a traceable work history. It connects original agreements, invoices and payments, explains what the records can support, and makes the gaps explicit. The public walkthrough uses synthetic records.
 
 ## Repository boundary
 
@@ -12,7 +12,7 @@ Do not commit real client records, internal validation material or identifiable 
 
 ## Guided example
 
-**Choose → Inspect → Review.** Choose Income, Rental or Residency; inspect three connected illustrative source records; review what is evidenced, what is missing and the next action. Users can open the evidence trail and export synthetic JSON. There is no file upload, actual document verification, legal opinion, eligibility decision, or backend.
+**Choose → Inspect → Review.** Choose Income, Rental or Residency; inspect three connected illustrative source records; review what is evidenced, what is missing and the next action. Users can open the evidence trail and export synthetic JSON. It is an illustrative browser walkthrough.
 
 The approved **rilatu.** logo is stored as path-based [SVG wordmark](rilatu-logo.svg), with a matching letter-derived [favicon](favicon.svg) and [Open Graph preview](og-cover.svg). No placeholder arrow remains in the public header.
 
@@ -20,11 +20,11 @@ The approved **rilatu.** logo is stored as path-based [SVG wordmark](rilatu-logo
 
 **Public demonstration:** [Rilatu on GitHub Pages](https://dokarpov.github.io/rilatu/) is reachable without signing in as of **17 October 2026**. This repository is **public** and contains the synthetic presentation site, design materials and UI tests. The separate `rilatu-product` repository remains private.
 
-The public demo is not a document-upload service, independent income verification or legal decision. It performs no authenticated uploads or customer-data processing.
+The public demo processes no real documents or customer records.
 
 GitHub Pages and the public repository have different exposure boundaries: shipped HTML, CSS and JavaScript are inspectable; public Git history and source files are also accessible. Don't commit real client material or secrets. If an actual secret is exposed, revoke or rotate it; a later deletion cannot erase copies, forks or caches.
 
-For deployment and validation status, see [site QA](QA_REPORT.md). Passing tests are not evidence of real-world verification or customer adoption.
+For implementation checks, see [site QA](QA_REPORT.md).
 
 ## Development and quality
 
