@@ -1,5 +1,18 @@
 # Rilatu QA and publication status — 12 October 2026
 
+> **Historical snapshot.** The private-repository/HTTP 404 statements below describe
+> the state checked on **12 October**, not the current release. As of the
+> 6 November repository review, `dokarpov/rilatu` is **public**, while
+> `dokarpov/rilatu-product` is **private**. The README records the public
+> GitHub Pages site as reachable on 17 October. Do not infer current public
+> availability from this historic snapshot alone: use the separate
+> `Public website availability` workflow after deployment.
+>
+> **QA coverage update, 6 November:** the `Site checks` draft now runs
+> both `tests/film.spec.js` and `tests/responsive.spec.js`.
+> Previously, the latter existed but was not invoked by that release gate.
+> This is a CI coverage improvement, not new user or Safari evidence.
+
 ## Product and identity
 - Approved **rilatu.** wordmark traced from the image supplied by the user into `rilatu-logo.svg`: scalable SVG outlines with no embedded bitmap. Header uses the full vector; favicon uses the matching `r` contour; `og-cover.svg` uses the same paths.
 - Brighter orange `#ff8048` and lighter warm paper `#fffaf6`. Archivo remains the sole UI typeface. Layout and motion foundation is otherwise stable.

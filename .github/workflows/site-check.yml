@@ -35,7 +35,7 @@ jobs:
       - name: Responsive and interaction checks
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/rilatu-server.log 2>&1 &
-          npx playwright test tests/film.spec.js --reporter=line --workers=2
+          npx playwright test tests/film.spec.js tests/responsive.spec.js --reporter=line --workers=2
       - name: Upload viewport screenshots
         if: always()
         uses: actions/upload-artifact@v4
