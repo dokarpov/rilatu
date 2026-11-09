@@ -1,5 +1,22 @@
 # Rilatu QA and publication status — 12 October 2026
 
+> **Historical snapshot.** The private-repository/HTTP 404 statements below describe
+> the state checked on **12 October**, not the current release. As of the
+> 6 November repository review, `dokarpov/rilatu` is **public**, while
+> `dokarpov/rilatu-product` is **private**. The README records the public
+> GitHub Pages site as reachable on 17 October. Do not infer current public
+> availability from this historic snapshot alone: use the separate
+> `Public website availability` workflow after deployment.
+>
+> **QA coverage update, 9 November:** the former `tests/responsive.spec.js` exercised
+> a workspace deliberately hidden behind `.rilatu-film-legacy`; 11 checks failed
+> when it was enabled in CI because that interface is no longer the public demo.
+> Its historical source is archived under `docs/legacy-guided-responsive-tests.archive.txt`.
+> The active `tests/responsive.spec.js` now validates the **visible autoplay film**
+> across eight widths, reduced-motion content and loaded assets. CI retains
+> `tests/film.spec.js` for actual frame transitions. These are browser checks,
+> not independent user evidence or a restored guided product workflow.
+
 ## Product and identity
 - Approved **rilatu.** wordmark traced from the image supplied by the user into `rilatu-logo.svg`: scalable SVG outlines with no embedded bitmap. Header uses the full vector; favicon uses the matching `r` contour; `og-cover.svg` uses the same paths.
 - Brighter orange `#ff8048` and lighter warm paper `#fffaf6`. Archivo remains the sole UI typeface. Layout and motion foundation is otherwise stable.
