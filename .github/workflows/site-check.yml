@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:
@@ -28,7 +28,7 @@ jobs:
         run: |
           node --check script.js
           node --check film.js
-      - name: Install Chromium test runner
+      - name: Install Chromium test runner (pinned Ubuntu 24.04 for Playwright compatibility)
         run: |
           npm install --no-save @playwright/test@1.56.1
           npx playwright install --with-deps chromium
