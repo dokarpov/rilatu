@@ -8,10 +8,14 @@
 > availability from this historic snapshot alone: use the separate
 > `Public website availability` workflow after deployment.
 >
-> **QA coverage update, 6 November:** the `Site checks` draft now runs
-> both `tests/film.spec.js` and `tests/responsive.spec.js`.
-> Previously, the latter existed but was not invoked by that release gate.
-> This is a CI coverage improvement, not new user or Safari evidence.
+> **QA coverage update, 9 November:** the former `tests/responsive.spec.js` exercised
+> a workspace deliberately hidden behind `.rilatu-film-legacy`; 11 checks failed
+> when it was enabled in CI because that interface is no longer the public demo.
+> Its historical source is archived under `docs/legacy-guided-responsive-tests.archive.txt`.
+> The active `tests/responsive.spec.js` now validates the **visible autoplay film**
+> across eight widths, reduced-motion content and loaded assets. CI retains
+> `tests/film.spec.js` for actual frame transitions. These are browser checks,
+> not independent user evidence or a restored guided product workflow.
 
 ## Product and identity
 - Approved **rilatu.** wordmark traced from the image supplied by the user into `rilatu-logo.svg`: scalable SVG outlines with no embedded bitmap. Header uses the full vector; favicon uses the matching `r` contour; `og-cover.svg` uses the same paths.
