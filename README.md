@@ -10,9 +10,11 @@ This public repository contains only the presentation website, synthetic interac
 
 Do not commit real client records, internal validation material or identifiable evidence here.
 
-## Guided example
+## Active public demonstration
 
-**Choose → Inspect → Review.** Choose Income, Rental or Residency; inspect three connected illustrative source records; review what is evidenced, what is missing and the next action. Users can open the evidence trail and export synthetic JSON. It is an illustrative browser walkthrough.
+The public page currently shows an **automatically animated four-step evidence film**, not the old interactive Choose → Inspect → Review workspace. The film shows a rental evidence request, linked sample documents, the remaining proof gap and a non-certified handover. Its data is synthetic and it accepts no real documents.
+
+The former guided workspace remains in the source behind `.rilatu-film-legacy` and is not an active product flow. Its obsolete interaction-test suite is archived; the release gate validates the actual film, responsive presentation, and reduced-motion behavior.
 
 The approved **rilatu.** logo is stored as path-based [SVG wordmark](rilatu-logo.svg), with a matching letter-derived [favicon](favicon.svg) and [Open Graph preview](og-cover.svg). No placeholder arrow remains in the public header.
 
@@ -32,7 +34,7 @@ For implementation checks, see [site QA](QA_REPORT.md).
 - `rilatu-logo.svg`, `favicon.svg`, `og-cover.svg`: approved identity assets.
 - [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) and [MOTION.md](MOTION.md): controlled visual and animation decisions.
 - [QA_REPORT.md](QA_REPORT.md): actual CI results, public accessibility and remaining release gates.
-- `tests/site_check.py` and `tests/responsive.spec.js`: structural and Chromium tests at 320–1920px.
+- `tests/site_check.py`, `tests/film.spec.js` and `tests/responsive.spec.js`: structural, animated-film and Chromium tests at 320–1920px.
 
 Local preview: `python3 -m http.server 8765`, then open `http://127.0.0.1:8765/`.
 
