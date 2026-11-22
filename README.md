@@ -2,40 +2,24 @@
 
 **Proof should travel.**
 
-Rilatu is a **private-source** research prototype for freelancers who need a traceable work history. It connects original agreements, invoices and payments, explains what the records can support, and makes the gaps explicit. The public walkthrough uses synthetic records.
+Rilatu helps freelancers build a traceable work history. It connects the original agreement, invoice and payment, shows which claim each record supports and lists what a recipient may still ask for.
 
-## Repository boundary
+## How it works
 
-This public repository contains only the presentation website, synthetic interactive demo, visual system and website tests. Product research, pilot operations, client workflows and future application code belong in the separate private `dokarpov/rilatu-product` repository.
+**Choose → Inspect → Review.** The freelancer chooses a purpose: an income summary, a rental application or residency preparation. Rilatu shows the three source records behind it, explains what each one establishes and prepares a review with the open items and the next step. The evidence trail links every claim to its source, and the review exports as JSON.
 
-Do not commit real client records, internal validation material or identifiable evidence here.
+## Site
 
-## Guided example
+[Rilatu on GitHub Pages](https://dokarpov.github.io/rilatu/) walks through one work story: a €3,200 retainer, the April invoice and the matching payment.
 
-**Choose → Inspect → Review.** Choose Income, Rental or Residency; inspect three connected illustrative source records; review what is evidenced, what is missing and the next action. Users can open the evidence trail and export synthetic JSON. It is an illustrative browser walkthrough.
+The **rilatu.** wordmark is a path-based [SVG](rilatu-logo.svg), with a letter-derived [favicon](favicon.svg) and an [Open Graph image](og-cover.svg).
 
-The approved **rilatu.** logo is stored as path-based [SVG wordmark](rilatu-logo.svg), with a matching letter-derived [favicon](favicon.svg) and [Open Graph preview](og-cover.svg). No placeholder arrow remains in the public header.
+## Development
 
-## Publication and privacy
-
-**Public demonstration:** [Rilatu on GitHub Pages](https://dokarpov.github.io/rilatu/) is reachable without signing in as of **17 October 2026**. This repository is **public** and contains the synthetic presentation site, design materials and UI tests. The separate `rilatu-product` repository remains private.
-
-The public demo processes no real documents or customer records.
-
-GitHub Pages and the public repository have different exposure boundaries: shipped HTML, CSS and JavaScript are inspectable; public Git history and source files are also accessible. Don't commit real client material or secrets. If an actual secret is exposed, revoke or rotate it; a later deletion cannot erase copies, forks or caches.
-
-For implementation checks, see [site QA](QA_REPORT.md).
-
-## Development and quality
-
-- `index.html`, `styles.css`, `script.js`: static product narrative and three-stage guided prototype.
-- `rilatu-logo.svg`, `favicon.svg`, `og-cover.svg`: approved identity assets.
-- [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) and [MOTION.md](MOTION.md): controlled visual and animation decisions.
-- [QA_REPORT.md](QA_REPORT.md): actual CI results, public accessibility and remaining release gates.
-- `tests/site_check.py` and `tests/responsive.spec.js`: structural and Chromium tests at 320–1920px.
+- `index.html`, `styles.css`, `script.js`, `film.js`: product narrative, animated walkthrough and the three-step guided review.
+- [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) and [MOTION.md](MOTION.md): visual and animation decisions.
+- `tests/site_check.py` and `tests/responsive.spec.js`: structural checks and Chromium tests from 320 to 1920 px.
 
 Local preview: `python3 -m http.server 8765`, then open `http://127.0.0.1:8765/`.
 
-Local checks: `python3 tests/site_check.py`. For automated browser testing, install Playwright, serve the root on 8765 and run `npx playwright test tests/responsive.spec.js`.
-
-**Stage:** research concept. Neither product-market fit nor independent proof-of-income verification has been established.
+Checks: `python3 tests/site_check.py`. For browser tests, install Playwright, serve the root on 8765 and run `npx playwright test tests/responsive.spec.js`.

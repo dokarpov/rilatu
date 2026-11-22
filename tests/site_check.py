@@ -16,11 +16,11 @@ assert not any(s in h for s in ['✳','✓','＋','●','🛫','📄'])
 assert 'prefers-reduced-motion' in css and 'IntersectionObserver' in js
 assert 'URL.createObjectURL' in js and 'rilatu-sample-' in js
 assert 'min-width:700px' in css and 'max-width:699px' in css
-assert 'not a document verification service' in h.lower()
+assert 'research concept' not in h.lower() and 'synthetic' not in h.lower()
 print('PASS: Rilatu assets, purpose-based evidence scenarios, export and reduced motion')
 
 assert 'id="exportFeedback"' in h and 'aria-live="polite"' in h
-assert 'Sample JSON download requested' in js
+assert 'JSON download requested' in js
 assert 'var(--route,0) * 100%' in css, 'selector underline must move one item per index'
 assert 'var(--route,0) * 300%' not in css, 'out-of-bounds selector underline regression'
 

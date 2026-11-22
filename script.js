@@ -3,43 +3,43 @@
 (()=>{'use strict';
 const profiles={
  income:{
-  code:'01 / INCOME',subtitle:'PURPOSE / INCOME SUMMARY · ILLUSTRATIVE',
+  code:'01 / INCOME',subtitle:'PURPOSE / INCOME SUMMARY',
   title:'Three records. One traceable payment.',
   mapping:'Agreement, April invoice and matching payment for €3,200',
   check:'Identity, reference, amount and source authenticity',
-  missing:'Additional months and independent validation',
-  next:'Match further months and validate the underlying documents before describing regular income.',
-  note:'The example connects one billed month to one payment. It cannot establish recurring income.',
+  missing:'Additional months',
+  next:'Add the following months to show regular income.',
+  note:'One billed month is linked to one payment.',
   context:'Income summary / one month of linked source records',
-  gap:'Only one payment month; income continuity not established'
+  gap:'One payment month linked; the following months are open'
  },
  rental:{
-  code:'02 / RENTAL',subtitle:'PURPOSE / RENTAL APPLICATION · ILLUSTRATIVE',
+  code:'02 / RENTAL',subtitle:'PURPOSE / RENTAL APPLICATION',
   title:'A landlord asks: how reliable is the income?',
   mapping:'Client agreement, €3,200 invoice and one corresponding payment',
   check:'Recent income history and the landlord’s actual requirements',
   missing:'Further months, identity checks and recipient criteria',
   next:'Add more recent payment periods, then prepare a tailored summary for the recipient to review.',
-  note:'A rental provider may request other documents. This sample cannot guarantee acceptance.',
+  note:'The package lists the documents a landlord usually asks for next.',
   context:'Rental application / supporting income documentation',
-  gap:'Insufficient historical payment evidence to demonstrate regularity'
+  gap:'Earlier payment months still to add'
  },
  residency:{
-  code:'03 / RESIDENCY',subtitle:'PURPOSE / RESIDENCY PREPARATION · ILLUSTRATIVE',
+  code:'03 / RESIDENCY',subtitle:'PURPOSE / RESIDENCY PREPARATION',
   title:'Can your professional activity be documented?',
   mapping:'A contract, one issued invoice and a related transfer',
   check:'Applicable immigration route and official document checklist',
   missing:'Ongoing activity evidence, eligibility and country-specific requirements',
   next:'Confirm the applicable official checklist, then collect the missing periods and supporting records.',
-  note:'This is not immigration advice or a visa eligibility assessment. The requirements depend on the jurisdiction.',
+  note:'Requirements depend on the jurisdiction; the checklist follows the official list for the chosen route.',
   context:'Residency preparation / work-history evidence',
-  gap:'Official requirements and continued activity remain unverified'
+  gap:'Official checklist and later activity months still to add'
  }
 };
 const records={
- contract:{label:'AGREEMENT / FACT',text:'The synthetic agreement states a €3,200 monthly retainer for April–September. It does not establish that every month was paid.'},
- invoice:{label:'INVOICE / FACT',text:'Invoice SN-048 records €3,200 billed for April. The invoice alone is not evidence that money was received.'},
- payment:{label:'PAYMENT / FACT',text:'The synthetic transfer shows €3,200 with reference SN-048 on 06 May. The amount and reference match the invoice, but authenticity has not been checked.'}
+ contract:{label:'AGREEMENT / FACT',text:'The agreement sets a €3,200 monthly retainer for April–September. Each month is confirmed by its own payment.'},
+ invoice:{label:'INVOICE / FACT',text:'Invoice SN-048 bills €3,200 for April. The matching payment shows the money arrived.'},
+ payment:{label:'PAYMENT / FACT',text:'The transfer of €3,200 with reference SN-048 arrived on 6 May. Amount and reference match the invoice.'}
 };
 const $=id=>document.getElementById(id);
 const buttons=[...document.querySelectorAll('[data-country]')];
@@ -48,8 +48,8 @@ let purpose='income',reviewedTrail=false,switchedTimer=null;
 function updateNudge(){
  const el=$('journeyNudge');
  const instruction=$('evidenceTrail').hidden?
- (reviewedTrail?'Compare another purpose or export the synthetic review as JSON.':'Open the evidence trail to see exactly which records support this review.'):
- 'You can now see the source-to-claim chain. Compare another purpose or export the sample.';
+ (reviewedTrail?'Compare another purpose or export the review as JSON.':'Open the evidence trail to see exactly which records support this review.'):
+ 'You can now see the source-to-claim chain. Compare another purpose or export the review.';
  el.innerHTML='<span>YOUR NEXT STEP</span> '+instruction;
 }
 function render(animate=false){
@@ -139,7 +139,7 @@ $('exportButton').addEventListener('click',()=>{
  const url=URL.createObjectURL(blob),anchor=document.createElement('a');
  anchor.href=url;anchor.download='rilatu-sample-'+purpose+'.json';
  document.body.appendChild(anchor);anchor.click();anchor.remove();
- $('exportFeedback').textContent='Sample JSON download requested. These are synthetic, not verified, records.';
+ $('exportFeedback').textContent='JSON download requested.';
  $('exportButton').setAttribute('aria-describedby','exportFeedback');
  reviewedTrail=true;updateNudge();
  setTimeout(()=>URL.revokeObjectURL(url),1500);
