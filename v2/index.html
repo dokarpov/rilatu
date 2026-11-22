@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rilatu: evidence for freelance work</title>
+<meta name="description" content="Rilatu links a freelancer’s agreement, invoice and payment into one reviewable package for a landlord, an accountant or an adviser.">
+<meta property="og:title" content="Rilatu: evidence for freelance work">
+<meta property="og:description" content="Agreement, invoice and payment, linked into one reviewable package.">
+<meta property="og:image" content="https://dokarpov.github.io/rilatu/og-cover.svg">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/familjen-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/familjen-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="page header-row">
+    <a class="logo" href="./" aria-label="Rilatu home"><img src="../rilatu-logo.svg" alt="rilatu." width="104" height="30"></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="#ledger">Product</a>
+      <a href="#review">Guided review</a>
+      <a href="#method">Method</a>
+      <a href="#questions">Questions</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero page" aria-labelledby="hero-title">
+  <h1 id="hero-title"><span>Work crosses borders.</span> <span>Proof follows.</span></h1>
+  <p class="lead">Contracts, invoices and payments often tell one story. Rilatu links the source records, the questions and the gaps in one traceable journey.</p>
+</section>
+
+<section id="ledger" class="ledger-section page" aria-labelledby="ledger-title">
+  <div class="ledger-head">
+    <h2 id="ledger-title" class="ledger-title">Three records from three places</h2>
+    <div class="switch" role="group" aria-label="Ledger view">
+      <button type="button" class="switch-btn" data-view="raw" aria-pressed="false">As received</button>
+      <button type="button" class="switch-btn" data-view="linked" aria-pressed="true">Linked</button>
+    </div>
+  </div>
+
+  <div class="ledger" data-view="linked">
+    <div class="ledger-cols" aria-hidden="true">
+      <span>Record</span><span class="col-linked">Reference</span><span class="col-linked num">Amount</span><span class="col-linked">Date</span><span class="col-linked">Role</span><span class="col-raw">Original text</span>
+    </div>
+
+    <article class="row" aria-label="Record A, client agreement">
+      <p class="key">A</p>
+      <p class="name">Client agreement<span>Studio North</span></p>
+      <p class="raw">contract_studio-north_2026.pdf, retainer 3200 EUR per month, April to September</p>
+      <dl class="cells">
+        <div><dt>Reference</dt><dd>Monthly retainer</dd></div>
+        <div class="num"><dt>Amount</dt><dd><mark>€3,200.00</mark></dd></div>
+        <div><dt>Date</dt><dd>Apr–Sep 2026</dd></div>
+        <div><dt>Role</dt><dd>Sets the terms</dd></div>
+      </dl>
+    </article>
+
+    <article class="row" aria-label="Record B, April invoice">
+      <p class="key">B</p>
+      <p class="name">April invoice<span>Issued by the freelancer</span></p>
+      <p class="raw">Factura SN-048, 3.200,00 €, 30/04/2026, servicios de abril</p>
+      <dl class="cells">
+        <div><dt>Reference</dt><dd><mark>SN-048</mark></dd></div>
+        <div class="num"><dt>Amount</dt><dd><mark>€3,200.00</mark></dd></div>
+        <div><dt>Date</dt><dd>30 Apr 2026</dd></div>
+        <div><dt>Role</dt><dd>Bills April</dd></div>
+      </dl>
+    </article>
+
+    <article class="row" aria-label="Record C, bank payment">
+      <p class="key">C</p>
+      <p class="name">Bank payment<span>Business account</span></p>
+      <p class="raw">06.05.2026 TRANSFER STUDIO NORTH REF SN048 +3200.00 EUR</p>
+      <dl class="cells">
+        <div><dt>Reference</dt><dd><mark>SN-048</mark></dd></div>
+        <div class="num"><dt>Amount</dt><dd><mark>€3,200.00</mark></dd></div>
+        <div><dt>Date</dt><dd>6 May 2026</dd></div>
+        <div><dt>Role</dt><dd>Pays invoice B</dd></div>
+      </dl>
+    </article>
+
+    <p class="ledger-foot"><span class="foot-linked">Invoice B and payment C share the reference <span class="nowrap">SN-048</span> and the amount €3,200.</span><span class="foot-raw">Three formats, two languages, one payment.</span></p>
+  </div>
+
+  <p class="ledger-cta"><a class="button" href="#review">Try the guided review</a><span class="example-note">Example records</span></p>
+</section>
+
+<section class="problem page" aria-labelledby="problem-title">
+  <h2 id="problem-title">Collecting documents is easy. Connecting them is the work.</h2>
+  <div class="problem-body">
+    <p>Agreements, invoices and bank entries live in separate places. The person who reads them asks the same questions every time:</p>
+    <ul class="questions">
+      <li>Which document is the original source?</li>
+      <li>Which period does each record cover?</li>
+      <li>Does the payment belong to this invoice?</li>
+      <li>What is still missing?</li>
+    </ul>
+    <p>Rilatu answers them next to the records, so the recipient reads the reasoning together with the evidence.</p>
+  </div>
+</section>
+
+<section id="review" class="review" aria-labelledby="review-title">
+  <div class="page">
+    <div class="review-head">
+      <h2 id="review-title">One set of records. A different question each time.</h2>
+      <div class="purpose" role="group" aria-label="Purpose">
+        <button type="button" class="purpose-btn" data-purpose="income" aria-pressed="true">Income summary</button>
+        <button type="button" class="purpose-btn" data-purpose="rental" aria-pressed="false">Rental application</button>
+        <button type="button" class="purpose-btn" data-purpose="residency" aria-pressed="false">Residency preparation</button>
+      </div>
+    </div>
+
+    <div class="sheet" aria-live="polite">
+      <div class="sheet-main">
+        <p class="sheet-kicker" id="sheet-context">Income summary for one month of linked records</p>
+        <h3 id="sheet-title">Three records. One traceable payment.</h3>
+        <p class="status"><span class="stamp">Linked to sources</span><span id="sheet-note">One billed month is linked to one payment.</span></p>
+
+        <h4>Claims</h4>
+        <ol class="claims">
+          <li><button type="button" class="claim" data-sources="A"><span class="claim-text">Studio North pays a €3,200 monthly retainer, April to September.</span><span class="claim-src">A</span></button></li>
+          <li><button type="button" class="claim" data-sources="B"><span class="claim-text">Invoice SN-048 bills April for €3,200.</span><span class="claim-src">B</span></button></li>
+          <li><button type="button" class="claim" data-sources="B C"><span class="claim-text">The payment of 6 May matches SN-048 by reference and amount.</span><span class="claim-src">B C</span></button></li>
+          <li><div class="claim open"><span class="claim-text" id="sheet-missing">Additional months</span><span class="claim-src">Open</span></div></li>
+        </ol>
+
+        <dl class="sheet-facts">
+          <div><dt>To check</dt><dd id="sheet-check">Identity, reference, amount and source authenticity</dd></div>
+          <div><dt>Next step</dt><dd id="sheet-next">Add the following months to show regular income.</dd></div>
+        </dl>
+      </div>
+
+      <aside class="sources" aria-label="Sources">
+        <h4>Sources</h4>
+        <ol>
+          <li data-source="A"><b>A</b><span>Client agreement</span><small>PDF agreement</small></li>
+          <li data-source="B"><b>B</b><span>Invoice SN-048</span><small>PDF invoice, 30 Apr 2026</small></li>
+          <li data-source="C"><b>C</b><span>Bank payment</span><small>Bank statement line, 6 May 2026</small></li>
+        </ol>
+        <p class="sources-note">Originals stay as they were received. Rilatu adds the links between them.</p>
+        <button type="button" class="button button-quiet" id="export">Download review as JSON</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="method" class="method page" aria-labelledby="method-title">
+  <h2 id="method-title">How Rilatu handles evidence</h2>
+  <dl class="principles">
+    <div><dt>Keep the original</dt><dd>Preserve what each document says, where it came from and when it arrived.</dd></div>
+    <div><dt>Name the assumption</dt><dd>Separate documented facts from interpretation and from the recipient’s own criteria.</dd></div>
+    <div><dt>Show what is open</dt><dd>A missing month stays visible as an open item, with the record that would close it.</dd></div>
+    <div><dt>Write for the reader</dt><dd>The same sources produce a different explanation for a landlord, an accountant or an adviser.</dd></div>
+  </dl>
+</section>
+
+<section id="questions" class="faq page" aria-labelledby="faq-title">
+  <h2 id="faq-title">Questions</h2>
+  <dl class="qa">
+    <div><dt>What does Rilatu prepare?</dt><dd>A reviewable package: the linked agreement, invoice and payment, an index of sources and a list of what the recipient may still ask for.</dd></div>
+    <div><dt>How does Rilatu treat a single payment?</dt><dd>It links the payment to the billed period it covers and lists the remaining months as open, so the recipient sees exactly which period the record supports.</dd></div>
+    <div><dt>Which records does Rilatu connect?</dt><dd>Client agreements, invoices and bank payments. Rilatu matches them by amount, date and reference and keeps every original file as it was received.</dd></div>
+    <div><dt>Who reviews the package?</dt><dd>A qualified person on the receiving side: a landlord, an accountant or an immigration adviser. Rilatu gives them the trail behind each claim.</dd></div>
+  </dl>
+</section>
+
+<section class="closing" aria-labelledby="closing-title">
+  <div class="page closing-row">
+    <h2 id="closing-title">Make the proof move.</h2>
+    <p>Hand a landlord, an accountant or an adviser one package with the trail behind every claim.</p>
+    <a class="button button-ink" href="#review">Try the guided review</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page footer-row">
+    <img src="../rilatu-logo.svg" alt="rilatu." width="72" height="21">
+    <p>© 2026 Rilatu, Barcelona</p>
+    <p>Not tax, legal or accounting advice.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

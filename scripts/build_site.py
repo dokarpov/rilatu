@@ -24,19 +24,30 @@ for name in FILES:
         raise SystemExit(f"Required public asset missing: {name}")
     shutil.copy2(source, DIST / name)
 
-html = (DIST / "index.html").read_text(encoding="utf-8")
+# Design iterations published next to the current site, each a self-contained folder.
+DIRS = ("v2",)
+ALLOWED = {".html", ".css", ".js", ".woff2", ".txt", ".svg"}
+for folder in DIRS:
+    for source in (ROOT / folder).rglob("*"):
+        if source.is_file() and source.suffix in ALLOWED:
+            target = DIST / source.relative_to(ROOT)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, target)
+
 site_url = os.environ.get("PUBLIC_SITE_URL", "").strip().rstrip("/")
-if site_url:
-    if not site_url.startswith("https://"):
-        raise SystemExit("PUBLIC_SITE_URL must be https://")
-    html = html.replace("https://dokarpov.github.io/rilatu", site_url)
-else:
-    # A private GitHub Pages URL is not a usable canonical URL.
-    html = re.sub(r'<link rel="canonical"[^>]*>\s*', "", html)
-    html = re.sub(r'<meta property="og:url"[^>]*>\s*', "", html)
-    html = re.sub(r'<meta property="og:image"[^>]*>\s*', "", html)
-    html = html.replace('"url":"https://dokarpov.github.io/rilatu/"', '"url":""')
-(DIST / "index.html").write_text(html, encoding="utf-8")
+for page in [DIST / "index.html"] + [DIST / d / "index.html" for d in DIRS]:
+    html = page.read_text(encoding="utf-8")
+    if site_url:
+        if not site_url.startswith("https://"):
+            raise SystemExit("PUBLIC_SITE_URL must be https://")
+        html = html.replace("https://dokarpov.github.io/rilatu", site_url)
+    else:
+        # A private GitHub Pages URL is not a usable canonical URL.
+        html = re.sub(r'<link rel="canonical"[^>]*>\s*', "", html)
+        html = re.sub(r'<meta property="og:url"[^>]*>\s*', "", html)
+        html = re.sub(r'<meta property="og:image"[^>]*>\s*', "", html)
+        html = html.replace('"url":"https://dokarpov.github.io/rilatu/"', '"url":""')
+    page.write_text(html, encoding="utf-8")
 
 assert not (DIST / ".github").exists()
 assert not (DIST / "tests").exists()
